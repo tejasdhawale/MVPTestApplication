@@ -5,4 +5,5 @@ package com.tejas.neosoft.mvpapplication.Main;
  */
 
 public class MainModel implements MainContract.mainModel {
+
 }
