@@ -1,4 +1,4 @@
-package com.tejas.neosoft.mvpapplication.Register.nw;
+package com.tejas.neosoft.mvpapplication.RxRetro.nw;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

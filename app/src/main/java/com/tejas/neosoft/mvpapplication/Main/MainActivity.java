@@ -1,6 +1,7 @@
 package com.tejas.neosoft.mvpapplication.Main;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,11 +26,13 @@ public  class MainActivity extends Activity implements MainContract.mainView{
     private MainPresenter mPresenter;
     LinearLayoutManager linearLayoutManager;
     SampleAdapter itemAdapter;
+    Context mContext;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mContext=this;
         mPresenter = new MainPresenter(this);
         mPresenter.getDataFromURL(getApplicationContext(), "");
         linearLayoutManager = new LinearLayoutManager(this);
@@ -41,7 +44,7 @@ public  class MainActivity extends Activity implements MainContract.mainView{
     }
     @Override
     public void onGetDataSuccess(String message, List<Datum> list) {
-        itemAdapter = new SampleAdapter(getApplicationContext(), list,new MainPresenter(this));
+        itemAdapter = new SampleAdapter(mContext, list,new MainPresenter(this));
         recyclerView.setAdapter(itemAdapter);
     }
     @Override

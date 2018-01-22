@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -16,7 +17,7 @@ public class RetrofitClient {
 
     private static Retrofit retrofit=null;
     private static String baseUrl="https://reqres.in";
-    public  static Retrofit getClient()
+    public static Retrofit getClient()
     {
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -33,6 +34,7 @@ public class RetrofitClient {
             retrofit=new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .client(client)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

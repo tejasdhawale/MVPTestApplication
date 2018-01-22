@@ -1,4 +1,4 @@
-package com.tejas.neosoft.mvpapplication.Register.nw;
+package com.tejas.neosoft.mvpapplication.RxRetro.nw;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -9,7 +9,7 @@ import java.util.List;
  * Created by webwerks1 on 18/1/18.
  */
 
-public class RegisterResponse {
+public class ApiResponse {
 
     //po jo
 

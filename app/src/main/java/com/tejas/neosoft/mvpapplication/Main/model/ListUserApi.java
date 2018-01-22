@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface ListUserApi {
     @GET("/api/users?page=2")
-
     Call<Users> getUsers();
+
 
 }
