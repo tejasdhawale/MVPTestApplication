@@ -3,6 +3,8 @@ package com.tejas.neosoft.mvpapplication.Login;
 
 import android.os.Handler;
 
+import com.tejas.neosoft.mylibrary.Validator;
+
 /**
  * Created by webwerks1 on 11/1/18.
  */
@@ -15,20 +17,19 @@ public class LoginModel implements LoginContract.LoginModel {
        new Handler().postDelayed(new Runnable() {
            @Override
            public void run() {
-               if (!username.contains("@")||username.isEmpty())
+               if (!Validator.validateEmail(username))
                {
                    listener.onUsernameError();
                    return;
                }
+
                if (password.isEmpty())
                {
                    listener.onPasswordError();
                    return;
                }
                listener.onSuccess();
-
            }
        },1000);
-
     }
 }
