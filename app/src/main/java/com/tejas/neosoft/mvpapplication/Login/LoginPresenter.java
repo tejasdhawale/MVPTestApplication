@@ -35,8 +35,6 @@ public class LoginPresenter implements LoginContract.LoginPresenter,LoginContrac
         mView.successfullLogin();
     }
 
-
-
     @Override
     public void onDestory() {
         mView=null;

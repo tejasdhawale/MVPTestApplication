@@ -22,7 +22,7 @@ import butterknife.OnClick;
 public class LoginActivity extends Activity implements LoginContract.LoginView {
 
  /**
- * implements LoginView overrides it's functions & also using Butterknife lib to bindviews
+ * implements RegisterView overrides it's functions & also using Butterknife lib to bindviews
  * **/
 
 
@@ -77,7 +77,7 @@ public class LoginActivity extends Activity implements LoginContract.LoginView {
     @Override
     public void successfullLogin() {
         progressBar.setVisibility(View.GONE);
-        Toast.makeText(mContext,"Loginuser: Successfull login ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext,"Loginuser: Successfull Register ", Toast.LENGTH_SHORT).show();
         mContext.startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
     }

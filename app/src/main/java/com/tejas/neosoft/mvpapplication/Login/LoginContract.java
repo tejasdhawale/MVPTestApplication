@@ -10,7 +10,7 @@ public interface LoginContract {
 
     interface LoginView {
         /**
-         * implemented by View of login
+         * implemented by View of Register
          * **/
      void showProgress();
      void hideProgress();
@@ -19,11 +19,17 @@ public interface LoginContract {
      void successfullLogin();
     }
     interface LoginPresenter{
+        /**
+         * implemented by Presenter of Register
+         * **/
         void validateLogin(String email,String Pass);
         void onDestory();
 
     }
     interface LoginModel{
+        /**
+         * implemented by model of Register
+         * **/
         interface OnLoginFinishedListener {
             void onUsernameError();
             void onPasswordError();
@@ -31,7 +37,6 @@ public interface LoginContract {
         }
 
         void login(String username, String password, OnLoginFinishedListener listener);
-
 
     }
 }
